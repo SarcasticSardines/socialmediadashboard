@@ -1,25 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import HomePageComponent from './components/HomePageComponent';
 
 function App() {
+  const [darkM, setDarkM] = useState<boolean>(false);
+
+    const toggleDL = () => {
+        setDarkM(!darkM);
+    }
+
+    const lBG: string = "lightbg min-h-full"
+    const dBG: string = "darkbg min-h-full"
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <>
+    <HomePageComponent />
+   </>
+    
   );
 }
 
